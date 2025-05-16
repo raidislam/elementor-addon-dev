@@ -18,7 +18,7 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_categories() {
-        return ['basic'];
+        return ['XTra-Addons'];
     }
 
     public function get_keywords() {
@@ -35,9 +35,9 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
         );
 
         $this->add_control(
-            'text',
+            'title',
             [
-                'label' => __('Text', 'elementor-addons'),
+                'label' => __('Title', 'elementor-addons'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => __('Hello World', 'elementor-addons'),
             ]
@@ -48,7 +48,7 @@ class Elementor_Test_Widget extends \Elementor\Widget_Base {
 
     protected function render() {
         $settings = $this->get_settings_for_display();
-        echo '<div class="elementor-test-widget">' . esc_html($settings['text']) . '</div>';
+        echo '<div class="elementor-test-widget">' . esc_html($settings['title']) . '</div>';
     }
 
 }

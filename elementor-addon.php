@@ -159,7 +159,7 @@ final class Elementor_Addon_Extension
         add_action('elementor/controls/controls_registered', [$this, 'init_controls']);
 
         // Category Init
-        // add_action( 'elementor/init', [ $this, 'elementor_common_category' ] );
+        add_action( 'elementor/init', [ $this, 'elementor_Addon_category' ] );
 
     }
 
@@ -293,18 +293,17 @@ final class Elementor_Addon_Extension
     // }
 
     // Custom Category
-    // public function elementor_common_category()
-    // {
+    public function elementor_Addon_category()
+    {
 
-    //     \Elementor\Plugin::$instance->elements_manager->add_category(
-    //         'elementor-common',
-    //         [
-    //             'title' => __('Elementor Common Category', 'elementor-common'),
-    //             'icon' => 'fa fa-plug', //default icon
-    //         ],
-    //         2 // position
-    //     );
-    // }
+        \Elementor\Plugin::$instance->elements_manager->add_category(
+            'XTra-Addons',
+            [
+                'title' => __('Extra Addons', 'elementor-addon'),
+                'icon' => 'fa fa-plug', //default icon
+            ],
+        );
+    }
 }
 
 Elementor_Addon_Extension::instance();
